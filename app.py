@@ -74,3 +74,7 @@ def main():
 
     else:
         st.warning("Please select a whisper model from the dropdown.")
+
+
+if __name__ == "__main__":
+    main()
