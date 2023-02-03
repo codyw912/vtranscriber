@@ -96,7 +96,7 @@ def transcribe_audio_from_url(url):
     # download file(s) and transcribe with whisper
     # save outputs, downloads are deleted
     with tempfile.TemporaryDirectory() as tmpdirname:
-        output_loc = tmpdirname.decode()
+        output_loc = tmpdirname
         download_from_url(url, output_loc)
         files = sorted(pathlib.Path(output_loc).glob("*.mp3"))
         for f in files:

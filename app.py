@@ -32,13 +32,13 @@ def main():
     st.markdown("## Select model and input url")
 
     st.markdown(
-        "# Models listed from fastest to slowest: tiny, base, small -- \
+        "### Models listed from fastest to slowest: tiny, base, small -- \
     slower models can be more accurate, but will take substantially longer to run"
     )
 
     # model selection option
     model_input_option = st.selectbox(
-        "Model option:", options=["Choose a model:"] + available_whisper_models
+        "Model:", options=["Choose a model:"] + available_whisper_models
     )
 
     if model_input_option == "Choose a model:":
