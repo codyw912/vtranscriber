@@ -21,7 +21,7 @@ def main():
         """
     )
 
-    available_whisper_models = ["tiny.en", "base.en", "small.en"]
+    available_whisper_models = ["tiny.en", "base.en"]
 
     # Let user choose whisper model
     @st.cache(show_spinner=True)
@@ -32,8 +32,9 @@ def main():
     st.markdown("## Select model and input url")
 
     st.markdown(
-        "### Models listed from fastest to slowest: tiny, base, small -- \
-    slower models can be more accurate, but will take substantially longer to run"
+        "Models listed from fastest to slowest: tiny, base -- \
+    slower models can be more accurate, but will take substantially longer to run. \
+    Only supports tiny and base models as compute is limited."
     )
 
     # model selection option
@@ -67,7 +68,7 @@ def main():
                 with st.spinner("Transcribing audio... this may take a few minutes."):
                     transcripts_json = transcribe_audio_wrapped(url)
 
-                st.write(transcripts_json)
+                st.json(transcripts_json)
 
         else:
             st.warning("Please enter a video URL.")
