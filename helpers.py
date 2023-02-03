@@ -75,14 +75,13 @@ def transcribe_audio_file(file_path):
 
     model = load_whisper_model()
     result = model.transcribe(file_path, fp16=False, language="English")
-    whisper.utils.get_writer(output_format="txt", output_dir="outputs/")(
-        result, file_path
-    )
+
+    # streamlit doesn't seem to handle outputting like this, skip it
+    # whisper.utils.get_writer(output_format="txt", output_dir="outputs/")(
+    #     result, file_path
+    # )
 
     return result["text"]
-    # TODO: return list of filenames outputted? maybe check against pre-computed list \
-    # of filenames from url. May not be necessary, streamlit may be able to just cache \
-    # function and know not to recompute?
 
 
 def transcribe_audio_from_url(url):
