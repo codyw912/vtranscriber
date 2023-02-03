@@ -109,13 +109,3 @@ def transcribe_audio_from_url(url):
 
 def summarize_transcript(transcript):
     pass
-
-
-if __name__ == "__main__":
-    import pprint
-
-    # url = "https://www.youtube.com/watch?v=WlY9pDwGbjw"
-    url = "https://www.youtube.com/watch?v=gjVwjISLPZo"
-    # url = "https://www.police1.com/active-shooter/videos/santa-barbara-killers-retribution-video-cvhbBxq4q7mDgTiK/"
-    # url = "https://archive.org/details/elliotrodgermanifestomytwistedworld"
-    pprint.pprint(transcribe_audio_from_url(url))
